@@ -1,0 +1,30 @@
+<div *ngIf = "(email == 'vinitha430@gmail.com')">
+  <p>hello officer!!!</p>
+  <a [routerLink] ="['/']">Back</a>
+<div class="jumbotron">
+    <h2>Edit your Requirements</h2>
+     <!-- Here we are declaring a local variable called “form” and setting it to an instance of ngForm. This is very important. Now our local form variable becomes of type FormGroup allowing us access to the FormGroup API’s on this local variable. We use this in the ngSubmit event where we send the value of the form via form.value -->
+    <form (submit)= "onEditSubmitt()">
+      <div class="form-group">
+        <button type="submit" class="btn btn-default">Click here to Edit!!</button>
+      </div>
+    </form>
+  </div>
+
+
+
+</div>
+
+
+<div *ngIf = "(email != 'vinitha430@gmail.com')">
+<a [routerLink] ="['/']">Back</a>
+<div class="jumbotron">
+    <h2>Fill the Form</h2>
+     <!-- Here we are declaring a local variable called “form” and setting it to an instance of ngForm. This is very important. Now our local form variable becomes of type FormGroup allowing us access to the FormGroup API’s on this local variable. We use this in the ngSubmit event where we send the value of the form via form.value -->
+    <form (submit)= "onSubmit()">
+      <div class="form-group">
+        <button type="submit" class="btn btn-default">Click here to fill the form!!</button>
+      </div>
+    </form>
+  </div>
+</div>

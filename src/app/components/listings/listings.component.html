@@ -1,0 +1,6 @@
+<ul class="list-group" *ngFor="let listing of listings">
+  <li class="list-group-item" *ngIf = "id == listing.firstName" >
+    <a [routerLink] ="['/listing/'+listing.$key]">{{listing.firstName}}</a>
+    <br>
+  </li>
+</ul>

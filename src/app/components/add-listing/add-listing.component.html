@@ -1,0 +1,65 @@
+<a [routerLink] ="['/']">Back</a>
+<div class="jumbotron">
+    <h2>Fill the Form</h2>
+     <!-- Here we are declaring a local variable called “form” and setting it to an instance of ngForm. This is very important. Now our local form variable becomes of type FormGroup allowing us access to the FormGroup API’s on this local variable. We use this in the ngSubmit event where we send the value of the form via form.value -->
+    <form (submit)= "onAddSubmit()">
+      <div class="form-group">
+        <label>User Name:</label>
+        <!-- Since we are working with template driven forms, we can use the ngModel directive to capture the values of our forms. One thing to note if you are coming from Angular 1.x. Using ngModel as shown below creates a one-way data binding, so once we hit submit the data is only sent to the controller. If we wanted to use two-way data binding, we would have to wrap the ngModel in [()] and assign an attribute to it. Also the name of the field corresponds to the name attribute so our first input will be firstName. -->
+        <input type="text" class="form-control" placeholder="John" name="firstName" [(ngModel)] ="firstName" required>
+      </div>
+      <div class="form-group">
+        <label>Aggregate:</label>
+        <input type="text" class="form-control" placeholder="Aggregate" name="aggregate" [(ngModel)] ="aggregate" required>
+      </div>
+      <div class="form-group">
+        <label>Projects:</label>
+        <input type="text" class="form-control" placeholder="No.of projects" name="projects" [(ngModel)] ="projects" required>
+      </div>
+
+      <div class="form-group">
+        <label>Gender</label>
+      </div>
+      <!-- Radio and checkboxes work much the same way -->
+      <div class="radio">
+        <label>
+          <input type="radio" name="gender" value="Male" [(ngModel)] ="gender">
+          Male
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="gender" value="Female" [(ngModel)] ="gender">
+          Female
+        </label>
+      </div>
+     <!--<div class="form-group">
+        <label for="internships" name="internships" [(ngModel)] ="internships" class="col-sm-3 control-label" required>Internships</label>
+         <div class="col-sm-9">
+           <select id="internships" class="form-control">
+             <option>Yes</option>
+             <option>No</option>
+             </select>
+             </div>
+             </div> <!-- /.form-group -->
+      <div class="form-group">
+        <label>Languages Known</label>
+      </div>
+      <label class="checkbox-inline">
+        <input type="checkbox" value="c" name="c" [(ngModel)] ="c"> C
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" value="python" name="python" [(ngModel)] ="python"> Python
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" value="java" name="java" [(ngModel)] ="java"> Java
+      </label>
+      <br>
+      <div class="form-group">
+        <input type="file" name="image" id="image" [(ngModel)] ="image">Choose a image
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </form>
+  </div>
